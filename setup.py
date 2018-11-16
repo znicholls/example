@@ -34,23 +34,23 @@ setup(
     # keywords="simple climate model",
     # license="GNU Affero General Public License v3.0 or later",
     packages=["example"],
-    install_requires=["numpy"],
+    install_requires=["numpy", "scipy"],
     # project_urls={  # Optional
     #     "Bug Reports": "https://github.com/openclimatedata/openscm/issues",
     #     "Source": "https://github.com/openclimatedata/openscm/",
     # },
-    # extras_require={
-    #     "docs": ["sphinx >= 1.4", "sphinx_rtd_theme", "sphinx-autodoc-typehints"],
-    #     "tests": ["pytest", "pytest-cov", "codecov", "nbval", "notebook"],
-    #     "dev": [
-    #         "setuptools>=38.6.0",
-    #         "twine>=1.11.0",
-    #         "wheel>=0.31.0",
-    #         "black",
-    #         "flake8",
-    #         "pandas",
-    #         "matplotlib",
-    #         "numpy",
-    #     ],
-    # },
+    extras_require={
+        # "docs": ["sphinx >= 1.4", "sphinx_rtd_theme", "sphinx-autodoc-typehints"],
+        "tests": ["pytest", "pytest-cov", "codecov"],
+        # "dev": [
+        #     "setuptools>=38.6.0",
+        #     "twine>=1.11.0",
+        #     "wheel>=0.31.0",
+        #     "black",
+        #     "flake8",
+        #     "pandas",
+        #     "matplotlib",
+        #     "numpy",
+        # ],
+    },
 )
