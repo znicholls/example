@@ -3,6 +3,13 @@ Example
 
 .. sec-begin-index
 
+Temporary notes:
+
+#. README: start with something basic which just notes down initial thoughts
+#. setup.py
+#. versioneer
+#. sphinx
+
 An example of how to setup a pure Python repository.
 The repository includes examples of:
 
