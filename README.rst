@@ -6,7 +6,8 @@ Example
 Temporary notes:
 
 #. README: start with something basic which just notes down initial thoughts
-#. setup.py
+#. fill out setup.py
+#. comment out versioneer related lines
 #. versioneer
 #. sphinx
 
