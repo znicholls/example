@@ -39,6 +39,8 @@ Temporary notes:
         return a + b
 
 #. test that the test passes and code coverage is 100% by running `make test`
+#. add travis, `.travis.yml`
+#. push, check that CI runs and passes
 
 #. sphinx
 
