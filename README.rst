@@ -40,7 +40,10 @@ Temporary notes:
 
 #. test that the test passes and code coverage is 100% by running `make test`
 #. add travis, `.travis.yml`
-#. push, check that CI runs and passes
+#. enable travis and codecov (TODO: add instructions)
+#. push check that CI runs and passes and that a code coverage report is generated
+
+--- End of minimal setup ---
 
 #. sphinx
 
@@ -48,16 +51,14 @@ An example of how to setup a pure Python repository.
 The repository includes examples of:
 
 - packaging
-- testing
 - automatic documentation with Sphinx
 - contributing guide
 - license
 - github pull request and issue templates
-- code coverage
-- easy version tracking with versioneer
 - automating repetitive tasks with make
 - changelog
-- continuous integration using travis
+- continuous integration using travis (TODO: add conda example too)
+- codacy
 
 .. sec-end-index
 
