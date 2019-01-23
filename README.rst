@@ -19,8 +19,6 @@ Temporary notes:
 #. setup code coverage output to be sensible, `.coveragerc`
 #. setup an example test by putting the following in `tests/unit/test_utils.py`
 
-
-
 .. code-block:: python
 
     from example.utils import add_example
@@ -33,6 +31,14 @@ Temporary notes:
         assert expected == result
 
 #. test that the test fails by running `make test`
+#. add code to pass the test in `src/example/utils.py`
+
+.. code-block:: python
+
+    def add_example(a, b):
+        return a + b
+
+#. test that the test passes and code coverage is 100% by running `make test`
 
 #. sphinx
 
