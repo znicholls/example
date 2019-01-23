@@ -62,7 +62,7 @@ setup(
     install_requires=["numpy", "scipy"],
     extras_require={
         "docs": ["sphinx", "sphinx_rtd_theme"],
-        "test": ["codecov", "pytest-cov", "pytest"],
+        "tests": ["codecov", "pytest-cov", "pytest"],
         "deploy": ["twine", "setuptools", "wheel", "flake8", "versioneer"],
     },
     # TODO: add resources on cmdclass
