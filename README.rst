@@ -7,8 +7,15 @@ Temporary notes:
 
 #. README: start with something basic which just notes down initial thoughts
 #. fill out setup.py
-#. comment out versioneer related lines
-#. versioneer
+#. fill out setup.cfg (TODO: explain setup.cfg file)
+#. add basic directory structure, `mkdir -p src/example`, `touch src/example/__init__.py` (change example to your package name in these paths)
+#. add gitignore file (python template is easy, add `*.DS_Store` if working on osx)
+#. add Makefile with basics
+#. make first-venv
+#. source ./venv/bin/activate (path could be different here if people get fancy with paths) (make sure conda isn't active so you don't get weird stuff happening)
+#. versioneer install (https://github.com/warner/python-versioneer)
+
+
 #. sphinx
 
 An example of how to setup a pure Python repository.

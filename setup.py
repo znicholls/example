@@ -1,4 +1,4 @@
-# import versioneer
+import versioneer
 
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
@@ -32,12 +32,12 @@ class Example(TestCommand):
         pytest.main(self.test_args)
 
 
-# cmdclass = versioneer.get_cmdclass()
-# cmdclass.update({"test": Example})
+cmdclass = versioneer.get_cmdclass()
+cmdclass.update({"test": Example})
 
 setup(
     name=PACKAGE_NAME,
-    # version=versioneer.get_version(),
+    version=versioneer.get_version(),
     description=DESCRIPTION,
     long_description=README_TEXT,
     long_description_content_type="text/x-rst",
@@ -66,7 +66,7 @@ setup(
         "deploy": ["twine", "setuptools", "wheel", "flake8", "versioneer"],
     },
     # TODO: add resources on cmdclass
-    # cmdclass=cmdclass,
+    cmdclass=cmdclass,
     # TODO: add resources on entry points
     # entry_points={
     #     "console_scripts": [
