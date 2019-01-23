@@ -15,6 +15,24 @@ Temporary notes:
 #. source ./venv/bin/activate (path could be different here if people get fancy with paths) (make sure conda isn't active so you don't get weird stuff happening)
 #. versioneer install (https://github.com/warner/python-versioneer)
 #. make your actual venv, `deactivate`, `make virtual-environment`, `source ./venv/bin/activate` (can't do make venv as then you get circular dependency)
+#. add tests directories, `mkdir -p tests/unit`, `mkdir -p tests/integration` (TODO: add explanation on what these are)
+#. setup code coverage output to be sensible, `.coveragerc`
+#. setup an example test by putting the following in `tests/unit/test_utils.py`
+
+
+
+.. code-block:: python
+
+    from example.utils import add_example
+
+
+    def test_addition():
+        expected = 4
+        result = add_example(1, 3)
+
+        assert expected == result
+
+#. test that the test fails by running `make test`
 
 #. sphinx
 

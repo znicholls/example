@@ -17,6 +17,9 @@ export PRINT_HELP_PYSCRIPT
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
+test:  $(VENV_DIR) ## run the full testsuite
+	$(VENV_DIR)/bin/pytest --cov -rfsxEX --cov-report term-missing
+
 virtual-environment:  ## update venv, create a new venv if it doesn't exist
 	make $(VENV_DIR)
 
