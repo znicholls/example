@@ -1,56 +1,92 @@
-# import versioneer
+import versioneer
 
-from setuptools import setup
-from os import path
+from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
 
-here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the README file
-with open(path.join(here, "README.md"), encoding="utf-8") as f:
-    long_description = f.read()
+PACKAGE_NAME = "example"
+AUTHOR = "Zebedee Nicholls"
+EMAIL = "zebedee.nicholls@climate-energy-college.org"
+URL = "https://github.com/znicholls/example"
 
-# Arguments marked as "Required" below must be included for upload to PyPI.
-# Fields marked as "Optional" may be commented out.
+DESCRIPTION = (
+    "Minimal example of how to setup a pure Python repository for scientific research"
+)
+README = "README.rst"
+
+SOURCE_DIR = "src"
+
+REQUIREMENTS = ["numpy", "scipy"]
+REQUIREMENTS_TESTS = ["codecov", "pytest-cov", "pytest>=4.0"]
+REQUIREMENTS_DOCS = ["sphinx>=1.4", "sphinx_rtd_theme"]
+REQUIREMENTS_DEPLOY = ["twine>=1.11.0", "setuptools>=38.6.0", "wheel>=0.31.0"]
+
+requirements_dev = [
+    *["flake8"],
+    *REQUIREMENTS_TESTS,
+    *REQUIREMENTS_DOCS,
+    *REQUIREMENTS_DEPLOY,
+]
+
+requirements_extras = {
+    "docs": REQUIREMENTS_DOCS,
+    "tests": REQUIREMENTS_TESTS,
+    "deploy": REQUIREMENTS_DEPLOY,
+    "dev": requirements_dev,
+}
+
+with open(README, "r") as readme_file:
+    README_TEXT = readme_file.read()
+
+
+class Example(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+
+        pytest.main(self.test_args)
+
+
+cmdclass = versioneer.get_cmdclass()
+cmdclass.update({"test": Example})
 
 setup(
-    name="openscm",
-    version="v0.0.0",
-    description="Description",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/znicholls/example",
-    classifiers=[
-        #   3 - Alpha
-        #   4 - Beta
-        #   5 - Production/Stable
-        # "Development Status :: 3 - Alpha",
-        # "Intended Audience :: Developers",
-        # "License :: OSI Approved :: MIT License",
-        # "Programming Language :: Python :: 3",
-        # "Programming Language :: Python :: 3.5",
-        # "Programming Language :: Python :: 3.6",
-        # "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    name=PACKAGE_NAME,
+    version=versioneer.get_version(),
+    description=DESCRIPTION,
+    long_description=README_TEXT,
+    long_description_content_type="text/x-rst",
+    author=AUTHOR,
+    author_email=EMAIL,
+    url=URL,
+    # license="2-Clause BSD License",  # TODO add license guide resources
+    classifiers=[  # full list at https://pypi.org/pypi?%3Aaction=list_classifiers
+        "Development Status :: 4 - Beta",
+        "License :: OSI Approved :: BSD License",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3.6",
     ],
-    # keywords="simple climate model",
-    # license="GNU Affero General Public License v3.0 or later",
-    packages=["example"],
-    install_requires=["numpy", "scipy"],
-    # project_urls={  # Optional
-    #     "Bug Reports": "https://github.com/openclimatedata/openscm/issues",
-    #     "Source": "https://github.com/openclimatedata/openscm/",
+    keywords=["example", "python", "repo"],
+    packages=find_packages(SOURCE_DIR),  # no exclude as only searching in `src`
+    package_dir={"": SOURCE_DIR},
+    # next line is only required if you have data files that have to be included
+    # e.g. csvs which define certain conventions etc.
+    # include_package_data=True,
+    # TODO: add link to how requirements work in detail
+    install_requires=REQUIREMENTS,
+    extras_require=requirements_extras,
+    # TODO: add resources on cmdclass
+    cmdclass=cmdclass,
+    # TODO: add resources on entry points
+    # entry_points={
+    #     "console_scripts": [
+    #         "generate-cmip6-citation-files=cmip6_data_citation_generator.cli:generate",
+    #         "upload-cmip6-citation-files=cmip6_data_citation_generator.cli:upload",
+    #     ]
     # },
-    extras_require={
-        # "docs": ["sphinx >= 1.4", "sphinx_rtd_theme", "sphinx-autodoc-typehints"],
-        "tests": ["pytest", "pytest-cov", "codecov"],
-        # "dev": [
-        #     "setuptools>=38.6.0",
-        #     "twine>=1.11.0",
-        #     "wheel>=0.31.0",
-        #     "black",
-        #     "flake8",
-        #     "pandas",
-        #     "matplotlib",
-        #     "numpy",
-        # ],
-    },
 )

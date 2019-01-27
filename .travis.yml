@@ -1,14 +1,19 @@
 language: python
-dist: trusty
-sudo: required
+cache: pip
+dist: xenial
 python:
+  - "3.5"
   - "3.6"
+  - "3.7"
+
 before_install:
-  - sudo apt-get update
-  - pip install --upgrade pip
+  - pip install pip --upgrade
+
 install:
-  - pip install -e .[tests]
+  - pip install .[tests]
+
 script:
   - pytest --cov -rfsxEX
+
 after_success:
-- codecov
+  - codecov
