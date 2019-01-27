@@ -63,7 +63,7 @@ setup(
     extras_require={
         "docs": ["sphinx", "sphinx_rtd_theme"],
         "tests": ["codecov", "pytest-cov", "pytest"],
-        "deploy": ["twine", "setuptools", "wheel", "flake8", "versioneer"],
+        "deploy": ["twine", "setuptools", "wheel", "flake8"],
     },
     # TODO: add resources on cmdclass
     cmdclass=cmdclass,
