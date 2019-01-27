@@ -27,7 +27,7 @@ $(VENV_DIR): setup.py
 	[ -d $(VENV_DIR) ] || python3 -m venv $(VENV_DIR)
 
 	$(VENV_DIR)/bin/pip install --upgrade pip
-	$(VENV_DIR)/bin/pip install -e .[tests,docs,deploy]
+	$(VENV_DIR)/bin/pip install -e .[dev]
 
 	touch $(VENV_DIR)
 

@@ -16,6 +16,25 @@ README = "README.rst"
 
 SOURCE_DIR = "src"
 
+REQUIREMENTS = ["numpy", "scipy"]
+REQUIREMENTS_TESTS = ["codecov", "pytest-cov", "pytest>=4.0"]
+REQUIREMENTS_DOCS = ["sphinx>=1.4", "sphinx_rtd_theme"]
+REQUIREMENTS_DEPLOY = ["twine>=1.11.0", "setuptools>=38.6.0", "wheel>=0.31.0"]
+
+requirements_dev = [
+    *["flake8"],
+    *REQUIREMENTS_TESTS,
+    *REQUIREMENTS_DOCS,
+    *REQUIREMENTS_DEPLOY,
+]
+
+requirements_extras = {
+    "docs": REQUIREMENTS_DOCS,
+    "tests": REQUIREMENTS_TESTS,
+    "deploy": REQUIREMENTS_DEPLOY,
+    "dev": requirements_dev,
+}
+
 with open(README, "r") as readme_file:
     README_TEXT = readme_file.read()
 
@@ -59,12 +78,8 @@ setup(
     # e.g. csvs which define certain conventions etc.
     # include_package_data=True,
     # TODO: add link to how requirements work in detail
-    install_requires=["numpy", "scipy"],
-    extras_require={
-        "docs": ["sphinx", "sphinx_rtd_theme"],
-        "tests": ["codecov", "pytest-cov", "pytest"],
-        "deploy": ["twine", "setuptools", "wheel", "flake8"],
-    },
+    install_requires=REQUIREMENTS,
+    extras_require=requirements_extras,
     # TODO: add resources on cmdclass
     cmdclass=cmdclass,
     # TODO: add resources on entry points
