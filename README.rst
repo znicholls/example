@@ -3,6 +3,18 @@ Example
 
 .. sec-begin-index
 
++-------------------+----------------+-----------+
+| Repository health | |Build Status| | |Codecov| |
++-------------------+----------------+-----------+
+
++-----------------+------------------+
+| Latest releases | |Latest Version| |
++-----------------+------------------+
+
++-----------------+----------------+---------------+------------------------------+
+| Latest activity | |Contributors| | |Last Commit| | |Commits Since Last Release| |
++-----------------+----------------+---------------+------------------------------+
+
 Temporary notes:
 
 - do all of this in new branch
@@ -62,14 +74,8 @@ The repository includes examples of [TODO: all of these]:
 - packaging
 - versioning with versioneer
 - testing with code coverage
-- automatic documentation with Sphinx
-- contributing guide
-- license
-- github pull request and issue templates
 - automating repetitive tasks with make
-- changelog
 - continuous integration using travis (TODO: add conda example too)
-- codacy
 
 .. sec-end-index
 
@@ -96,3 +102,20 @@ unless noted otherwise for specific parts:
     purposes, all without asking permission.
 
 .. sec-end-license
+
+.. sec-begin-links
+
+.. |Build Status| image:: https://travis-ci.com/znicholls/example.svg?branch=master
+    :target: https://travis-ci.com/znicholls/example
+.. |Codecov| image:: https://img.shields.io/codecov/c/github/znicholls/example.svg
+    :target: https://codecov.io/gh/znicholls/example/branch/master/graph/badge.svg
+.. |Latest Version| image:: https://img.shields.io/github/tag/znicholls/example.svg
+    :target: https://github.com/znicholls/example/releases
+.. |Last Commit| image:: https://img.shields.io/github/last-commit/znicholls/example.svg
+    :target: https://github.com/znicholls/example/commits/master
+.. |Commits Since Last Release| image:: https://img.shields.io/github/commits-since/znicholls/example/latest.svg
+    :target: https://github.com/znicholls/example/commits/master
+.. |Contributors| image:: https://img.shields.io/github/contributors/znicholls/example.svg
+    :target: https://github.com/znicholls/example/graphs/contributors
+
+.. sec-end-links
