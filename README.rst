@@ -11,9 +11,9 @@ Example
 | Latest releases | |Latest Version| |
 +-----------------+------------------+
 
-+-----------------+----------------+---------------+------------------------------+
-| Latest activity | |Contributors| | |Last Commit| | |Commits Since Last Release| |
-+-----------------+----------------+---------------+------------------------------+
++-----------------+----------------+---------------+
+| Latest activity | |Contributors| | |Last Commit| |
++-----------------+----------------+---------------+
 
 Temporary notes:
 
@@ -112,8 +112,6 @@ unless noted otherwise for specific parts:
 .. |Latest Version| image:: https://img.shields.io/github/tag/znicholls/example.svg
     :target: https://github.com/znicholls/example/releases
 .. |Last Commit| image:: https://img.shields.io/github/last-commit/znicholls/example.svg
-    :target: https://github.com/znicholls/example/commits/master
-.. |Commits Since Last Release| image:: https://img.shields.io/github/commits-since/znicholls/example/latest.svg
     :target: https://github.com/znicholls/example/commits/master
 .. |Contributors| image:: https://img.shields.io/github/contributors/znicholls/example.svg
     :target: https://github.com/znicholls/example/graphs/contributors
