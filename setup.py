@@ -1,12 +1,12 @@
 import versioneer
-
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
 
 PACKAGE_NAME = "example"
-AUTHOR = "Zebedee Nicholls"
-EMAIL = "zebedee.nicholls@climate-energy-college.org"
+AUTHORS = [
+    ("Zeb Zebedee", "zebedee.nicholls@climate-energy-college.org"),
+]
 URL = "https://github.com/znicholls/example"
 
 DESCRIPTION = (
@@ -17,22 +17,22 @@ README = "README.rst"
 SOURCE_DIR = "src"
 
 REQUIREMENTS = ["numpy", "scipy"]
-REQUIREMENTS_TESTS = ["codecov", "pytest-cov", "pytest>=4.0"]
-REQUIREMENTS_DOCS = ["sphinx>=1.4", "sphinx_rtd_theme"]
 REQUIREMENTS_DEPLOY = ["twine>=1.11.0", "setuptools>=38.6.0", "wheel>=0.31.0"]
+REQUIREMENTS_DOCS = ["sphinx>=1.4", "sphinx_rtd_theme"]
+REQUIREMENTS_TESTS = ["codecov", "pytest-cov", "pytest>=4.0"]
 
-requirements_dev = [
+REQUIREMENTS_DEV = [
     *["flake8"],
-    *REQUIREMENTS_TESTS,
-    *REQUIREMENTS_DOCS,
     *REQUIREMENTS_DEPLOY,
+    *REQUIREMENTS_DOCS,
+    *REQUIREMENTS_TESTS,
 ]
 
-requirements_extras = {
+REQUIREMENTS_EXTRAS = {
+    "deploy": REQUIREMENTS_DEPLOY,
     "docs": REQUIREMENTS_DOCS,
     "tests": REQUIREMENTS_TESTS,
-    "deploy": REQUIREMENTS_DEPLOY,
-    "dev": requirements_dev,
+    "dev": REQUIREMENTS_DEV,
 }
 
 with open(README, "r") as readme_file:
@@ -60,8 +60,8 @@ setup(
     description=DESCRIPTION,
     long_description=README_TEXT,
     long_description_content_type="text/x-rst",
-    author=AUTHOR,
-    author_email=EMAIL,
+    author=", ".join([author[0] for author in AUTHORS]),
+    author_email=", ".join([author[1] for author in AUTHORS]),
     url=URL,
     # license="2-Clause BSD License",  # TODO add license guide resources
     classifiers=[  # full list at https://pypi.org/pypi?%3Aaction=list_classifiers
@@ -79,14 +79,13 @@ setup(
     # include_package_data=True,
     # TODO: add link to how requirements work in detail
     install_requires=REQUIREMENTS,
-    extras_require=requirements_extras,
+    extras_require=REQUIREMENTS_EXTRAS,
     # TODO: add resources on cmdclass
     cmdclass=cmdclass,
     # TODO: add resources on entry points
     # entry_points={
     #     "console_scripts": [
-    #         "generate-cmip6-citation-files=cmip6_data_citation_generator.cli:generate",
-    #         "upload-cmip6-citation-files=cmip6_data_citation_generator.cli:upload",
+    #         "example-cli-hello=example.cli:hello",
     #     ]
     # },
 )

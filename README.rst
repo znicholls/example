@@ -21,7 +21,7 @@ Temporary notes:
 
 **Minimum requirements for a reproducible, one line install package**
 
-#. README: start with something basic which just notes down initial thoughts
+#. ``README.rst``: start with something basic which just notes down initial thoughts
 #. fill out setup.py
 #. fill out setup.cfg (TODO: explain setup.cfg file)
 #. add basic directory structure, ``mkdir -p src/example``, ``touch src/example/__init__.py`` (change example to your package name in these paths)
@@ -51,12 +51,32 @@ Temporary notes:
 
 .. code-block:: python
 
-    def add_example(a, b):
-        return a + b
+    def add_example(first, second):
+        """
+        Add the inputs
+
+        Parameters
+        ----------
+        first : Any
+            First input to add
+
+        second : Any
+            Second input to add
+
+        Returns
+        -------
+        Any
+            Sum of the inputs
+        """
+        return first + second
+
 
 #. test that the test passes and code coverage is 100% by running ``make test``
-#. add travis, ``.travis.yml``
-#. enable travis (instructions `here <https://docs.travis-ci.com/user/tutorial/>`_) and codecov (instructions `here <https://docs.codecov.io/docs/quick-start>`_, ignore the stuff about requiring a token, that's automatic on github)
+
+
+#. add GitHub CI (TODO explanation of how things work)
+
+
 #. add code coverage settings, ``.codecov.yml``
 #. push check that CI runs and passes and that a code coverage report is generated
 
