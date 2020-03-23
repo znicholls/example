@@ -78,6 +78,8 @@ Beyond this minimal setup, there are lots of other things which can be done (see
 If you'd like to learn about or contribute guides to any of these please make a pull request on which we can discuss!
 
 - automatic documentation with sphinx and read the docs
+- CHANGELOGS
+- releasing with PyPI/pip and conda
 - examples of repository usage with jupyter notebooks (and testing of notebooks)
 - in depth code linting with packages like mypy and pylint
 
