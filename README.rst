@@ -72,9 +72,8 @@ Temporary notes:
 
 
 #. test that the test passes and code coverage is 100% by running ``make test``
+#. add GitHub pull request template, issue template and CI/CD (TODO explanation of how things work)
 
-
-#. add GitHub CI (TODO explanation of how things work)
 
 
 #. add code coverage settings, ``.codecov.yml``
