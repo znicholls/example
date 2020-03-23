@@ -111,8 +111,8 @@ unless noted otherwise for specific parts:
 
 .. sec-begin-links
 
-.. |CI CD| image:: https://github.com/znicholls/example/workflows/openscm-runner%20CI-CD/badge.svg
-    :target: https://github.com/znicholls/example/actions?query=workflow%3A%22openscm-runner+CI-CD%22
+.. |CI CD| image:: https://github.com/znicholls/example/workflows/Example%20CI-CD/badge.svg
+    :target: https://github.com/znicholls/example/actions?query=workflow%3A%22Example+CI-CD%22
 .. |Codecov| image:: https://img.shields.io/codecov/c/github/znicholls/example.svg
     :target: https://codecov.io/gh/znicholls/example/branch/master/graph/badge.svg
 .. |Latest Version| image:: https://img.shields.io/github/tag/znicholls/example.svg
