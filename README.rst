@@ -3,9 +3,9 @@ Example
 
 .. sec-begin-index
 
-+-------------------+----------------+-----------+
-| Repository health | |Build Status| | |Codecov| |
-+-------------------+----------------+-----------+
++-------------------+---------+-----------+
+| Repository health | |CI CD| | |Codecov| |
++-------------------+---------+-----------+
 
 +-----------------+------------------+
 | Latest releases | |Latest Version| |
@@ -15,11 +15,7 @@ Example
 | Latest activity | |Contributors| | |Last Commit| | |Commits Since Last Release| |
 +-----------------+----------------+---------------+------------------------------+
 
-Temporary notes:
-
-- do all of this in new branch
-
-**Minimum requirements for a reproducible, one line install package**
+**Minimum requirements for a reproducible, one line install package with continuous integration**
 
 #. ``README.rst``: start with something basic which just notes down initial thoughts
 #. fill out setup.py
@@ -73,28 +69,17 @@ Temporary notes:
 
 #. test that the test passes and code coverage is 100% by running ``make test``
 #. add GitHub pull request template, issue template and CI/CD (TODO explanation of how things work)
-
-
-
 #. add code coverage settings, ``.codecov.yml``
 #. push check that CI runs and passes and that a code coverage report is generated
 
 --- End of minimal setup ---
 
-**README badges**
+Beyond this minimal setup, there are lots of other things which can be done (see list below).
+If you'd like to learn about or contribute guides to any of these please make a pull request on which we can discuss!
 
-copy this setup
-
-#. sphinx
-
-An example of how to setup a pure Python repository.
-The repository includes examples of [TODO: all of these]:
-
-- packaging
-- versioning with versioneer
-- testing with code coverage
-- automating repetitive tasks with make
-- continuous integration using travis (TODO: add conda example too)
+- automatic documentation with sphinx and read the docs
+- examples of repository usage with jupyter notebooks (and testing of notebooks)
+- in depth code linting with packages like mypy and pylint
 
 .. sec-end-index
 
@@ -124,8 +109,8 @@ unless noted otherwise for specific parts:
 
 .. sec-begin-links
 
-.. |Build Status| image:: https://travis-ci.com/znicholls/example.svg?branch=master
-    :target: https://travis-ci.com/znicholls/example
+.. |CI CD| image:: https://github.com/znicholls/example/workflows/openscm-runner%20CI-CD/badge.svg
+    :target: https://github.com/znicholls/example/actions?query=workflow%3A%22openscm-runner+CI-CD%22
 .. |Codecov| image:: https://img.shields.io/codecov/c/github/znicholls/example.svg
     :target: https://codecov.io/gh/znicholls/example/branch/master/graph/badge.svg
 .. |Latest Version| image:: https://img.shields.io/github/tag/znicholls/example.svg
