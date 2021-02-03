@@ -15,9 +15,6 @@ Example
 | Latest activity | |Contributors| | |Last Commit| |
 +-----------------+----------------+---------------+
 
-Temporary notes:
-
-- do all of this in new branch
 
 **Minimum requirements for a reproducible, one line install package**
 
