@@ -15,9 +15,11 @@ Example
 | Latest activity | |Contributors| | |Last Commit| |
 +-----------------+----------------+---------------+
 
-**Minimum requirements for a reproducible, one line install package with continuous integration**
 
-#. ``README.rst``: start with something basic which just notes down initial thoughts
+**Minimum requirements for a reproducible, one line install package**
+
+#. README: start with something basic which just notes down initial thoughts
+#. An extra number I forget
 #. fill out setup.py
 #. fill out setup.cfg (TODO: explain setup.cfg file)
 #. add basic directory structure, ``mkdir -p src/example``, ``touch src/example/__init__.py`` (change example to your package name in these paths)
